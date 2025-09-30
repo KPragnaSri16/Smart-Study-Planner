@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Study Planner</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (for icons if needed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>📘 Smart Study Planner</h1>
+    <p>Boost your productivity and manage time smartly</p>
+  </header>
+
+  <!-- Task Input Form -->
+  <section id="task-form">
+    <h2>Add New Task</h2>
+    <input type="text" id="taskTitle" placeholder="Enter subject/topic">
+    <input type="date" id="taskDate">
+    <textarea id="taskNotes" placeholder="Notes (optional)"></textarea>
+    <select id="taskPriority">
+      <option value="low">Low Priority</option>
+      <option value="medium">Medium Priority</option>
+      <option value="high">High Priority</option>
+    </select>
+    <button onclick="addTask()">Add Task</button>
+  </section>
+
+  <!-- Progress Tracker -->
+  <section id="progress">
+    <h2>Progress Tracker</h2>
+    <p>Completed: <span id="progressText">0/0</span></p>
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+  </section>
+
+  <!-- Task List -->
+  <section id="task-list">
+    <h2>My Tasks</h2>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search tasks..." onkeyup="searchTasks()">
+
+    <!-- Filters -->
+    <div class="filters">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+    </div>
+
+    <ul id="tasks"></ul>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline">
+    <h2>Visual Timeline</h2>
+    <div id="timelineContainer"></div>
+  </section>
+
+  <!-- Calendar -->
+  <section id="calendar">
+    <h2>Calendar View</h2>
+    <div id="calendarContainer"></div>
+  </section>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
